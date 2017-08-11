@@ -1,5 +1,5 @@
  var api = "http://api.wunderground.com/api/898609db2ff0c335/geolookup/conditions/q/";
- api = api + 
+ api = api + "CA/San_Francisco.json";
     $(document).ready( function(){
   $.ajax({
   type:"GET",
