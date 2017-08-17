@@ -1,6 +1,17 @@
  var api = "http://api.wunderground.com/api/898609db2ff0c335/geolookup/conditions/q/";
  api = api + "CA/San_Francisco.json";
+
+     if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+  });
+}
+
+
     $(document).ready( function(){
+
+     
+  //beginning of ajax    
   $.ajax({
   type:"GET",
   url : api,
