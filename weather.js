@@ -1,5 +1,4 @@
- var api = "http://api.wunderground.com/api/898609db2ff0c335/geolookup/conditions/q/";
- api = api + "CA/San_Francisco.json";
+ var api = "http://api.openweathermap.org/data/2.5/weather?id=2172797&appid=1af849e40d12a4e399adab335b4ed014";
 
      if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
