@@ -15,6 +15,7 @@ $.getJSON(api, function(parsed_json){
 
   //console.log(name);
   //console.log(longtitude);
+  //refer back to weather.html to change html elements to display api data
   document.getElementById("longtitude").innerHTML = "longtitude: " +  longtitude;
   document.getElementById("latitude").innerHTML = "latitude : " + latitude;
   document.getElementById("location").innerHTML = "location : " + name; 
