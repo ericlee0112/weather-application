@@ -5,21 +5,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather App</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script><!-- jquery imported from internet -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"><!-- import the lobster font -->
 </head>
+<!-- beginning of css -->
+<style>
+    p{
+        text-align: center;
+        font-family: Lobster;
+        color: black;
+    }
+
+    .block{
+        background-color:grey;
+        opacity:0.6;
+        padding:30px;
+        display:block;
+        width: 60%;
+        margin-top:auto;
+        margin-right:auto;
+        margin-left:auto;
+        margin-bottom:auto;
+        border-radius:20px;
+    }
+</style>
+<!-- end of css -->
 <body>
 
- <form id="frm1">
-  Location: <input type="text" name="city" value="San Francisco"><br><br>
-  <input type="submit" value="Submit">
-</form> 
+ 
+<div class="block text-center">
+<div class="list-unstyled">
 
-<div id="longtitude"></div>
-<p><span id="latitude"></span></p>
-<p><span id="location"></span></p>
-<p><span id="temp"></span></p>
-
-<p><span id="condition"></span></p>
+<p id="longtitude"></p>
+<p id="latitude"></p>
+<p id="location"></p>
+<p id="temp"></p>
+<p id="condition"></p>
+</div>
+</div>
     
 <script src="test.js"></script>
 </body>
