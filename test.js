@@ -1,5 +1,5 @@
 $(document).ready( function(){
-var posLat, posLon, api;
+var posLat, posLon, api;//initialize variables
 
      if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -7,9 +7,9 @@ var posLat, posLon, api;
     posLat = position.coords.latitude;
     posLon = position.coords.longitude;
     api = "http://api.openweathermap.org/data/2.5/weather?lat=" + posLat + "&lon=" + posLon + "&appid=1af849e40d12a4e399adab335b4ed014";
-
+    //change coordinates on api link to user's location 
 $.getJSON(api, function(parsed_json){
-  var tempK = parsed_json.main.temp;
+  var tempK = parsed_json.main.temp;//fetch temperature in kelvin from json file
   var tempC = Math.round((tempK - 273.15)*10)/10;//to round to the nearest decmial place
   var tempF = Math.round((tempK*(9/5) - 459.67)*10)/10;//to convert from kelvin to farenheit and then to round to nearest decimal
   var tempSwap = true;//to set tempswap boolean false so that user can alternate between celsius and farenheit
