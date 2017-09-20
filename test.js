@@ -1,15 +1,15 @@
 $(document).ready( function(){
-var posLat, posLon, api;//initialize variables
+var posLat, posLon, api;//initialize variables 
 
-     if (navigator.geolocation) {
+     if (navigator.geolocation) {//if longtitude and latitude is found 
   navigator.geolocation.getCurrentPosition(function(position) {
     //$("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
     posLat = position.coords.latitude;
     posLon = position.coords.longitude;
     api = "http://api.openweathermap.org/data/2.5/weather?lat=" + posLat + "&lon=" + posLon + "&appid=1af849e40d12a4e399adab335b4ed014";
-    //change coordinates on api link to user's location 
+     
 $.getJSON(api, function(parsed_json){
-  var tempK = parsed_json.main.temp;//fetch temperature in kelvin from json file
+  var tempK = parsed_json.main.temp;
   var tempC = Math.round((tempK - 273.15)*10)/10;//to round to the nearest decmial place
   var tempF = Math.round((tempK*(9/5) - 459.67)*10)/10;//to convert from kelvin to farenheit and then to round to nearest decimal
   var tempSwap = true;//to set tempswap boolean false so that user can alternate between celsius and farenheit
@@ -33,14 +33,15 @@ $.getJSON(api, function(parsed_json){
       tempSwap = false;
     }
   });
-
+//create new date object 
 var d = new Date();
 var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-document.getElementById("date").innerHTML = days[d.getDay()];// to show user when data was last updated
-
+var utc = d.toUTCString();
+//document.getElementById("date").innerHTML = days[d.getDay()];
+document.getElementById("date").innerHTML = utc;
 
 });//end of getJSON
 
   });
      }
-});    
+});   
