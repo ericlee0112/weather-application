@@ -1,4 +1,4 @@
- var api = "http://api.openweathermap.org/data/2.5/weather?id=2172797&appid=1af849e40d12a4e399adab335b4ed014";
+ var api = "http://api.openweathermap.org/data/2.5/weather?id=2172797&appid=THIS_IS_THE_API_KEY";
 
      if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
